@@ -89,7 +89,7 @@ $(document).ready(function () {
      * @param  {Object} districts
      * @descriptor An object that contains name and id of districts
      */
-    const starSelectDependencies = () => {
+    const startSelectDependencies = () => {
         getGeographicData(fillProvinces);
         getGeographicData(fillCantons, 1);
         getGeographicData(fillDistricts, 1, 1);
@@ -108,7 +108,6 @@ $(document).ready(function () {
         getGeographicData(fillDistricts, provincesCR.val(), cantonsCR.val());
     });
 
-    //Calls to funtions
 
-    starSelectDependencies();
+    startSelectDependencies();
 });
