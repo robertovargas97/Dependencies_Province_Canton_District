@@ -27,7 +27,7 @@ $(document).ready(function () {
     };
 
     /**
-        * Gets the names and identifiers of provinces,cantons or districts from a CDN through an AJAJ request if the request is OK , show an error otherwise
+        * Gets the names and identifiers of provinces,cantons or districts from a CDN through an AJAJ request. If the request is OK , show an error otherwise
         * @param  {Function reference} fuctionToUse
         * @descriptor The fuction to fill the select HTML element with either provinces,cantons or districst
         * @param  {number} provinceId
