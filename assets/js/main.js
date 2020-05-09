@@ -14,20 +14,18 @@ $(document).ready(function () {
      * @descriptor Element that going to contain the new option tag
      */
     const appendOptionElement = (geographicData, container) => {
-        const locationsNames = Object.values(geographicData);
-        const placesIds = Object.keys(geographicData);
-        const quantityOfElements = placesIds.length;
+        const quantityOfLocations = Object.keys(geographicData).length;
 
-        for (let i = 0; i < quantityOfElements; i++) {
+        for ( let i = 1 ; i <= quantityOfLocations; i++) {
             let newElement = document.createElement('option');
-            newElement.text = locationsNames[i];
-            newElement.value = placesIds[i];
+            newElement.text = geographicData[i];
+            newElement.value = i;
             container.append(newElement);
         }
     };
 
     /**
-        * Gets the names and identifiers of provinces,cantons or districts from a CDN through an AJAJ request. If the request is OK , show an error otherwise
+        * Gets the names and identifiers of provinces,cantons or districts from a CDN through an AJAJ request if the request is OK , show an error otherwise
         * @param  {Function reference} fuctionToUse
         * @descriptor The fuction to fill the select HTML element with either provinces,cantons or districst
         * @param  {number} provinceId
@@ -93,7 +91,6 @@ $(document).ready(function () {
         getGeographicData(fillProvinces);
         getGeographicData(fillCantons, 1);
         getGeographicData(fillDistricts, 1, 1);
-
     };
 
 
